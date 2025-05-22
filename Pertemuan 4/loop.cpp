@@ -2,67 +2,66 @@
 using namespace std;
 
 int main(){
-    system("cls");
-    // //perintah loncat
-    // a:
-    //     cout << "Hello wolrd" << endl;
-    //     goto d;
-    // b:
-    //     cout << "Fasilkom_TI" << endl;
-    //     return 0;
-    // c:
-    //     cout << "Ilmu KOmputer" << endl;
-    //     goto b;
-    // d:
-    //     cout << "IKLC" << endl;
-    //     goto c;
+    system("cls"); 
 
-    // //menampilkan bilangan genap 10 - 1 dengan goto
-    // int i = 10;
+    /* ======================== BAGIAN GOTO ======================== */
+    // Perintah loncat menggunakan label dan `goto`
+    a:
+        cout << "Hello world" << endl;    // Dicetak dulu
+        goto d;                           // Loncat ke label d
+    b:
+        cout << "Fasilkom_TI" << endl;    // Dicetak
+        return 0;                         // Mengakhiri program
+    c:
+        cout << "Ilmu Komputer" << endl; // Dicetak
+        goto b;                          // Loncat ke label b
+    d:
+        cout << "IKLC" << endl;          // Dicetak
+        goto c;                          // Loncat ke label c
 
-    // genap:
-    // if(i % 2 == 0){
-    //     cout << i << endl;
-    // }
-    // i--;
-    
-    // if(i >= 2){
-    //     goto genap;
-    // }
+    /* ======================== BILANGAN GENAP (GOTO) ======================== */
+    int i = 10;
 
-    // //statement while
-    // int i = 1;
-    // while(i <= 10){
-    //     if(i % 2 == 0){
-    //         cout << i << " ";
-    //     }
-    //     i++;
-    // }
+    genap:
+    if(i % 2 == 0){ // Jika i genap
+        cout << i << endl;
+    }
+    i--; // Kurangi i
+    if(i >= 2){
+        goto genap; // Ulangi jika masih ≥ 2
+    }
 
-    // //statement do-while ==> biarpun salah tapi tetap dijalankan sekali
-    // int i = 1;
-    // do{
-    //     cout << i << endl;
-    // } while(i <= 0);
+    /* ======================== WHILE LOOP ======================== */
+    i = 1; // Di-reset ke 1
+    while(i <= 10){ // Ulangi selama i ≤ 10
+        if(i % 2 == 0){ // Tampilkan hanya bilangan genap
+            cout << i << " ";
+        }
+        i++;
+    }
 
-    //statement for
-    // for(int i = 1; i <= 10; i += 2){
-    //     cout << "Hello Wolrd" << endl;
-    // }
+    /* ======================== DO-WHILE LOOP ======================== */
+    i = 1;
+    do{
+        cout << i << endl;
+        // Walau i sudah tidak memenuhi kondisi, akan tetap dijalankan sekali
+    } while(i <= 0); // Kondisi salah, tapi perintah tetap dieksekusi satu kali
 
-    //nested for
-    // for(int i = 1; i <= 5; i++){
-    //     for(int j = 1; j <= 5; j++){
-    //         cout << " * ";
-    //     }
-    //     cout << endl;
-    // }
-    
-    //segitiga siku-siku
-    for(int i = 1; i <= 5; i++){
-        for(int j = 1; j <= i; j++){
+    /* ======================== FOR LOOP ======================== */
+    for(int i = 1; i <= 10; i += 2){ // Melompat 2-2
+        cout << "Hello World" << endl;
+    }
+
+    /* ======================== NESTED FOR: KOTAK BINTANG ======================== */
+    for(int i = 1; i <= 5; i++){          // Baris
+        for(int j = 1; j <= 5; j++){      // Kolom
+            cout << " * ";                // Cetak bintang
+        }
+        cout << endl;                     // Pindah baris setelah 5 kolom
+    }
+
+    /* ======================== SEGITIGA SIKU-SIKU BINTANG ======================== */
+    for(int i = 1; i <= 5; i++){          // Baris ke-i
+        for(int j = 1; j <= i; j++){      // Banyak bintang sesuai nomor baris
             cout << " * ";
         }
-        cout << endl;
-    }
-}
