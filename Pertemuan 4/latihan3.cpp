@@ -4,7 +4,7 @@ using namespace std;
 int main() {
     string password, sandi, expected = "";
 
-    cout << "Masukkan kata sandi : "; cin >> password; Input pertama sebagai kata dasar (password) yang akan dijadikan pola
+    cout << "Masukkan kata sandi : "; cin >> password; // Input pertama sebagai kata dasar (password) yang akan dijadikan pola
 
     cout << "Masukkan kata : "; cin >> sandi; // Input kedua adalah hasil yang ditulis agen, yang akan dicek apakah sesuai dengan pola yang benar berdasarkan password
 
